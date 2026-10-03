@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big ideas start with you</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="home">
+  <a href="mailto:haithambenmeriem@gmail.com" class="contact-btn">Contact us</a>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Big ideas<br>start with<br><span>you.</span></h1>
+      <p>Tell us about yourself, your projects,<br>and let's create something<br>meaningful together!</p>
+      <button class="story" id="storyBtn" type="button"><i>▶</i> Watch our story</button>
+    </div>
+    <div class="hero-img">
+      <span class="note">YOUR idea <br>OUR<br>Support</span>
+      <img src="hero.png" alt="" onerror="this.remove()">
+    </div>
+  </section>
+
+  <h2 class="how">How it works? <span>↴</span></h2>
+
+  <section class="cards">
+    <article class="card c1">
+      <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#12284c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="9" width="38" height="33" rx="5"/><path d="M5 20h38M15 4v10M33 4v10"/></svg><svg class="sp" viewBox="0 0 24 30" fill="none" stroke-width="3" stroke-linecap="round"><path d="M4 4l14 5M6 14l14 2M4 25l13-4"/></svg>
+      <h3>1. Book a time</h3>
+      <p>Choose a date and time<br>that works for you.</p>
+      <button class="arrow" data-step="1" aria-label="Open step 1">→</button>
+    </article>
+    <article class="card c2">
+      <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#12284c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="15" r="9"/><path d="M6 43c0-10 8-16 18-16s18 6 18 16z"/></svg><svg class="sp" viewBox="0 0 24 30" fill="none" stroke-width="3" stroke-linecap="round"><path d="M4 4l14 5M6 14l14 2M4 25l13-4"/></svg>
+      <h3>2. Add your contact</h3>
+      <p>We will be back as soon<br>as possible</p>
+      <button class="arrow" data-step="2" aria-label="Open step 2">→</button>
+    </article>
+    <article class="card c3">
+      <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#12284c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M44 4L4 21l14 6 6 17zM18 27L44 4"/></svg><svg class="sp" viewBox="0 0 24 30" fill="none" stroke-width="3" stroke-linecap="round"><path d="M4 4l14 5M6 14l14 2M4 25l13-4"/></svg>
+      <h3>3. Tell us more about your project</h3>
+      <p>leave your vision and wills for<br>your portfolio</p>
+      <button class="arrow" data-step="3" aria-label="Open step 3">→</button>
+    </article>
+    <article class="card c4">
+      <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="#12284c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="20"/><path d="M14 25l7 7 13-15"/></svg><svg class="sp" viewBox="0 0 24 30" fill="none" stroke-width="3" stroke-linecap="round"><path d="M4 4l14 5M6 14l14 2M4 25l13-4"/></svg>
+      <h3>4. You're in!</h3>
+      <p>Let's turn your ideas<br>into real projects.</p>
+      <button class="arrow" data-step="4" aria-label="Open step 4">→</button>
+    </article>
+  </section>
+  <p class="foot">Your ideas. Our support.</p>
+</main>
+
+<!-- VIDEO MODAL: set VIDEO_SRC in script.js -->
+<div class="modal" id="videoModal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-x" id="videoX" aria-label="Close">✕</button>
+    <div id="videoSlot" class="video-slot"><span>Video coming soon</span></div>
+  </div>
+</div>
+
+<!-- STEP 1 -->
+<section class="panel p1" id="panel1">
+  <div class="left">
+    <button class="back" data-back>← Back</button>
+    <div class="num">1</div>
+    <h2>Choose a time that works for you.</h2>
+    <p>Select a date and time from the calendar below. We'll be waiting for you!</p>
+    <div class="sign">See you soon! ☺</div>
+  </div>
+  <div class="box">
+    <div class="cal-head">
+      <button id="prevM" aria-label="Previous month">←</button>
+      <b id="monthLabel"></b>
+      <button id="nextM" aria-label="Next month">→</button>
+    </div>
+
+    <div class="cal" id="cal"></div>
+    <div class="slots" id="slots"></div>
+
+    <p class="err" id="err1"></p>
+    <button class="cta" id="next1">Confirm time →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="panel p2" id="panel2">
+  <div class="left">
+    <button class="back" data-back>← Back</button>
+    <div class="num">2</div>
+    <h2>Leave us your contact</h2>
+    <p>Share the contact details you're comfortable with, so we can reach you and follow up on your project.</p>
+    <div class="sign">Let's stay in touch!</div>
+  </div>
+  <div class="box">
+    <label>Your name<input id="name" placeholder="Name" autocomplete="name"></label>
+    <label>Your email<input id="email" type="email" placeholder="Email" autocomplete="email"></label>
+    <label>Phone (optional)<input id="phone" type="tel" placeholder="Phone (optional)"></label>
+    <label>WhatsApp<input id="whatsapp" type="tel" placeholder="WhatsApp number"></label>
+    <p class="err" id="err2"></p>
+    <button class="cta" id="next2">Next step →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="panel p3" id="panel3">
+  <div class="left">
+    <button class="back" data-back>← Back</button>
+    <div class="num">3</div>
+    <h2>Tell us more about you and your project.</h2>
+    <p>Tell us what you're interested in, your ideas, or any specific goals, and your vision for your portfolio.</p>
+    <div class="sign">Dream, plan, create!</div>
+  </div>
+  <div class="box">
+    <label>Your specialty / portfolio role<textarea id="role" rows="2" placeholder="What specialty or role are you making a portfolio for?"></textarea></label>
+    <label>Your vision for the portfolio<textarea id="vision" rows="4" placeholder="What should the portfolio feel like and communicate? Tell us about the mood, style, or message you imagine."></textarea></label>
+    <label>Additional notes<textarea id="notes" rows="2" placeholder="Space for any additional notes…"></textarea></label>
+    <p class="err" id="err3"></p>
+    <button class="cta" id="next3">Next step →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="panel p4" id="panel4">
+  <div class="left">
+    <button class="back" data-back>← Back</button>
+    <div class="num">4</div>
+    <h2>Tell us how interested you are in working with us.</h2>
+    <p>Move the slider from 0 to 10 to show how interested you are in creating your portfolio with us.</p>
+    <div class="sign">Thank you!</div>
+  </div>
+  <div class="box">
+    <b>Your level of interest</b>
+    <div class="range-lbl"><span>0 = just exploring</span><span>10 = very interested</span></div>
+    <input type="range" id="interest" min="0" max="10" step="1" value="6">
+    <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
+    <div class="val"><span id="val">6</span> / 10</div>
+    <p class="err" id="err4"></p>
+    <button class="cta" id="submit">Submit →</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
